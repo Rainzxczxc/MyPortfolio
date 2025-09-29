@@ -1,0 +1,272 @@
+.outline-text {
+  color: cyan;
+  -webkit-text-stroke: 2px black; /* Outline thickness + color */
+  font-weight: 900; /* Bold look */
+  animation: brokenBulb 2s infinite;
+}
+
+.inverted-outline-text {
+  color: cyan;
+  -webkit-text-stroke: 2px black; /* Outline thickness + color */
+  font-weight: 900; /* Bold look */
+  animation: inverted-brokenBulb 2s infinite;
+}
+.blinking-border {
+  animation: broken-bulb-flicker 2s infinite; /* Adjust duration for speed; infinite loop */
+  border-style: solid; /* Ensure border style is solid for visibility */
+  border-width: 4px; /* Explicitly set if not already */
+}
+
+@keyframes broken-bulb-flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    border-color: currentColor; /* Visible border */
+  }
+  20%,
+  24%,
+  55% {
+    border-color: transparent; /* "Off" state for flicker */
+  }
+}
+
+/* Keyframes for flickering */
+@keyframes brokenBulb {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    color: cyan;
+    text-shadow: 0 0 5px #008b8b, 0 0 10px #008b8b, 0 0 20px #008b8b;
+  }
+  20%,
+  24%,
+  55% {
+    color: rgb(255, 255, 255);
+    text-shadow: none;
+  }
+}
+
+@keyframes inverted-brokenBulb {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    color: cyan;
+    text-shadow: 0 0 5px #008b8b, 0 0 10px #008b8b, 0 0 20px #008b8b;
+  }
+  20%,
+  24%,
+  55% {
+    color: rgb(0, 0, 0);
+    text-shadow: none;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1) rotate(45deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5) rotate(45deg);
+  }
+}
+
+.animate-blink {
+  animation: blink 2s infinite ease-in-out;
+}
+
+/* ===== Futuristic Hologram (Soft Edges + Ripple Effect) ===== */
+.hologram {
+  position: relative;
+  display: inline-block;
+  filter: brightness(1.3) saturate(1.2);
+  animation:
+    hologramFloat 3s ease-in-out infinite alternate,
+    hologramFlicker 5s infinite;
+  overflow: hidden;
+}
+
+/* Cyan glow aura */
+.hologram::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: -2;
+}
+
+/* Horizontal scanlines */
+.hologram::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(0, 255, 255, 0.05) 0px,
+    rgba(0, 255, 255, 0.05) 1px,
+    transparent 2px,
+    transparent 4px
+  );
+  opacity: 0.4;
+  mix-blend-mode: screen;
+  animation: glitchLines 1.2s linear infinite;
+  z-index: 2;
+}
+
+/* Image with soft fade edges */
+.hologram img {
+  position: relative;
+  display: block;
+  z-index: 1;
+  animation: rgbShift 4s infinite;
+  border-radius: 50px; /* Slight soft corners */
+  mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+  -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+  mask-mode: alpha;
+  -webkit-mask-mode: alpha;
+}
+
+/* Scanline effect */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  background: linear-gradient(to bottom, rgba(0, 255, 255, 0.25), transparent);
+  animation: scanlineMove 2.2s linear infinite;
+  z-index: 3;
+}
+
+/* Base ripple light projection */
+.projection-base {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(0, 255, 255, 0.7) 0%, transparent 70%);
+  border-radius: 50%;
+  box-shadow: 0 0 25px 10px rgba(0, 255, 255, 0.4);
+  animation: ripplePulse 3s infinite ease-in-out;
+  z-index: -1;
+}
+
+/* Floating / breathing motion */
+@keyframes hologramFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-10px) scale(1.03);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+}
+
+/* Scanline movement */
+@keyframes scanlineMove {
+  0% {
+    top: 0%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Flicker effect */
+@keyframes hologramFlicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    filter: brightness(1.3);
+  }
+  20%, 24%, 55% {
+    opacity: 0.6;
+    filter: brightness(0.8);
+  }
+}
+
+/* RGB split glitch */
+@keyframes rgbShift {
+  0% {
+    filter: none;
+    transform: translate(0, 0);
+  }
+  10% {
+    filter: drop-shadow(-1px 0 red) drop-shadow(1px 0 blue);
+    transform: translate(-1px, 0);
+  }
+  20% {
+    filter: drop-shadow(2px 0 red) drop-shadow(-2px 0 blue);
+    transform: translate(1px, 0);
+  }
+  40% {
+    filter: drop-shadow(-2px 0 red) drop-shadow(2px 0 blue);
+    transform: translate(-2px, 1px);
+  }
+  60%, 100% {
+    filter: none;
+    transform: translate(0, 0);
+  }
+}
+
+/* Glitch horizontal shaking */
+@keyframes glitchLines {
+  0% { transform: translateX(0); }
+  10% { transform: translateX(2px); }
+  20% { transform: translateX(-3px); }
+  30% { transform: translateX(1px); }
+  50% { transform: translateX(-2px); }
+  70% { transform: translateX(2px); }
+  100% { transform: translateX(0); }
+}
+
+/* Ripple wave pulse under projection */
+@keyframes ripplePulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+    opacity: 0.6;
+    filter: blur(4px);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.3);
+    opacity: 0.2;
+    filter: blur(8px);
+  }
+}
