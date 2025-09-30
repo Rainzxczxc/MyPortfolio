@@ -1,5 +1,4 @@
 import React from "react";
-import "./sections/Navbar";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import Background from "./sections/Background";
