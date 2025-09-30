@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import "../styles/style.css";
-import  Astronaut from {"../Pics/Astronaut.png"}
+import Astronaut from "../Pics/Astronaut.png";
 
 const Hero = () => {
   const sectionRef = useRef(null);

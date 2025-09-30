@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import ResumePDF from "../Resume/Resume.pdf";
-import Logo from "../Pics/Logo.avi";
+import Logo from "../Pics/Logo.avif";
 
 const sections = ["Home", "Skills", "Projects", "AboutMe", "Contact"];
 
@@ -52,11 +52,7 @@ function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
-              src={Logo}
-              alt="Logo"
-              className="h-10 w-auto"
-            />
+            <img src={Logo} alt="Logo" className="h-10 w-auto" />
           </div>
 
           {/* Desktop Nav */}

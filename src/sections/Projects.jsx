@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import StarsBackground from "./Components/StarsBg";
 import FaceCheck from "../Pics/ProjectPics/FaceCheck.png";
+import Forest from "../Pics/ProjectPics/Forest.png";
+import SamplePortfolio from "../Pics/ProjectPics/SamplePortfolio.png";
 
 function Projects() {
   const projects = [
@@ -10,7 +12,7 @@ function Projects() {
       title:
         "FaceCheck - An Web-based Attendance Monitoring System With Face Recognition",
       desc: "FaceCheck is an intelligent attendance monitoring system that utilizes facial recognition technology to automate and secure attendance tracking. It allows faculty to easily verify student presence in real time by scanning faces through a web interface. Built with Face API.js, it ensures accuracy, efficiency, and convenience while reducing manual record errors.",
-      image: {FaceCheck},
+      image: { FaceCheck },
       reverse: false,
       languages: ["HTML", "CSS", "JavaScript", "Face API.js", "PHP", "MySQL"],
       link: "https://facecheck.site/",
@@ -19,7 +21,7 @@ function Projects() {
       id: "02",
       title: "Forest Login/Sign Up Page",
       desc: "A beautifully designed forest-themed authentication page that brings a calming and nature-inspired aesthetic to the login and sign-up experience. This project demonstrates creative UI design using React and Tailwind CSS, combining smooth animations and responsive layouts for a visually engaging user experience.",
-      image: "/src/Pics/ProjectPics/Forest.png",
+      image: { Forest },
       reverse: true,
       languages: ["React", "Tailwind CSS"],
       link: "https://rainzxczxc.github.io/ForestLogin/",
@@ -28,7 +30,7 @@ function Projects() {
       id: "03",
       title: "Sample Portfolio",
       desc: "A personal portfolio website showcasing my skills, projects, and achievements as a web developer. Designed with a focus on clarity and interactivity, it features responsive sections, smooth transitions, and a professional layout — providing visitors with an overview of my work, passion, and technical expertise.",
-      image: "/src/Pics/ProjectPics/Sample Portfolio.png",
+      image: { SamplePortfolio },
       reverse: false,
       languages: ["HTML", "CSS", "JavaScript"],
       link: "https://rainzxczxc.github.io/Portfolio/",
