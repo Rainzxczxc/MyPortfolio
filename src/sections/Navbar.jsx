@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimation } from "framer-motion";
 import ResumePDF from "../Resume/Resume.pdf";
+import Logo from "../Pics/Logo.avi";
 
 const sections = ["Home", "Skills", "Projects", "AboutMe", "Contact"];
 
@@ -52,7 +53,7 @@ function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="/src/Pics/Logo.avif" // replace with your logo path
+              src={Logo}
               alt="Logo"
               className="h-10 w-auto"
             />

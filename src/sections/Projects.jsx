@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import StarsBackground from "./Components/StarsBg";
+import FaceCheck from "../Pics/ProjectPics/FaceCheck.png";
 
 function Projects() {
   const projects = [
@@ -9,7 +10,7 @@ function Projects() {
       title:
         "FaceCheck - An Web-based Attendance Monitoring System With Face Recognition",
       desc: "FaceCheck is an intelligent attendance monitoring system that utilizes facial recognition technology to automate and secure attendance tracking. It allows faculty to easily verify student presence in real time by scanning faces through a web interface. Built with Face API.js, it ensures accuracy, efficiency, and convenience while reducing manual record errors.",
-      image: "/src/Pics/ProjectPics/FaceCheck.png",
+      image: {FaceCheck},
       reverse: false,
       languages: ["HTML", "CSS", "JavaScript", "Face API.js", "PHP", "MySQL"],
       link: "https://facecheck.site/",

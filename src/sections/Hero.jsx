@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FaFacebook, FaLinkedin, FaInstagram, FaGithub } from "react-icons/fa";
 import "../styles/style.css";
+import  Astronaut from {"../Pics/Astronaut.png"}
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -112,7 +113,7 @@ const Hero = () => {
       {/* Right Image */}
       <div className="md:w-1/2 mt-12 md:mt-0 flex justify-center z-10">
         <img
-          src="/src/Pics/Astronaut.png"
+          src={Astronaut}
           alt="Astronaut"
           className={`w-full max-w-[280px] sm:max-w-[350px] md:w-[650px] md:max-w-none object-contain transition-all duration-700 ${
             isVisible ? "astronaut-intro" : "opacity-0 translate-y-[-50px]"
